@@ -8,15 +8,20 @@
     <script>
         var fecha = new Date();
         var hora = fecha.getHours();
-        var minuto = fecha.getMinutes();
-        var time = hora+":"+minuto;
+        var minuto = fecha.getMinutes();    
+        if(minuto>=0 && minuto<=9){
+            minuto= "0"+minuto;
+            var time = hora+":"+minuto;
+        }else{
+            var time = hora+":"+minuto;
+        }
         if(hora>=6 && hora<=12){
             var mensaje = new String("Buenos días.");
             alert("Bienvenid@. "+mensaje+" Son las: "+time+ " a.m."+
                                 "\nIngresa los datos solicitados.");
         }else{
-            if(hora>=12 && hora<=19){
-                var mensaje2 = new String("Buenas tardes.")
+            if(hora>=13 && hora<=18){
+                var mensaje2 = new String("Buenas tardes.") 
                 alert("Bienvenid@. "+mensaje2+" Son las: "+time+" p.m."+
                                    "\nIngresa los datos solicitados.");
                 }else{
@@ -85,9 +90,7 @@
         }
  
     </script>
-
-
-
+    
 </head>
 <body>
    
